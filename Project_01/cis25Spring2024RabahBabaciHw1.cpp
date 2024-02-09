@@ -1,10 +1,9 @@
 /**
  * Program Name: cis25Spring2024RabahBabaciHw1.cpp
- * Discussion:   Simple C++
+ * Discussion:   HW #1 Exercise #1
  * Written By:   R. Babaci
- * Date:         2024/02/01
+ * Date:         2024/02/09
  */
-
 
 // Include/Header Files
 #include <iostream>
