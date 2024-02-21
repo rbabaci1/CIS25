@@ -22,27 +22,27 @@ int main() {
     "  Assignment:               HW #1 Exercise #1\n"
     "  Implemented by:           Rabah Babaci\n"
     "  Required Submission Date: 2024/02/10\n"
-    "  Actual Submission Date:   2024/02/09\n\n";
+    "  Actual Submission Date:   2024/02/09\n\n"
 
-    cout << "My name is Rabah Babaci!\n\n"
+    "My name is Rabah Babaci!\n\n"
 
-    "My initials are patterned as below.\n\n";
+    "My initials are patterned as below.\n\n"
 
     // Printing the initials
-    cout << "RRRRRRRRR      BBBBBBBBB\n"
-            "R        R     B        B\n"
-            "R        R     B        B\n"
-            "R         R    B         B\n"
-            "R        R     B        B\n"
-            "RRRRRRRRR      BBBBBBBBB\n"
-            "R  R           B        B\n"
-            "R   R          B        B\n"
-            "R     R        B         B\n"
-            "R       R      B        B\n"
-            "R         R    BBBBBBBBB\n\n";
+    "RRRRRRRRR      BBBBBBBBB\n"
+    "R        R     B        B\n"
+    "R        R     B        B\n"
+    "R         R    B         B\n"
+    "R        R     B        B\n"
+    "RRRRRRRRR      BBBBBBBBB\n"
+    "R  R           B        B\n"
+    "R   R          B        B\n"
+    "R     R        B         B\n"
+    "R       R      B        B\n"
+    "R         R    BBBBBBBBB\n\n"
 
     // Printing the character counts
-    cout << "There are 36 R’s, and 43 B’s.\n\n"
+    "There are 36 R’s, and 43 B’s.\n\n"
     "There are 79 characters in total." << endl;
 
     return 0;
