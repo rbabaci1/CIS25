@@ -5,31 +5,17 @@
  * Date:         2024/02/24
  */
 
+
 // Include/Header Files
 #include <iostream>
 using namespace std;
 
+// Application Driver
+int main() {
+    int num1RB;
+    int num2RB;
 
-// Function to check if a number is positive, negative, or zero
-string checkSign(int number) {
-    return (number > 0) ? "positive" : (number < 0) ? "negative" : "zero";
-}
-
-// Function to check if a number is even or odd
-string checkParity(int number) {
-    return (number % 2) ? "odd" : "even";
-}
-
-// Function to perform and display arithmetic
-void performArithmeticAndDisplay(int num1, int num2) {
-    cout << "(" << num1 << ") + (" << num2 << ") --> " << (num1 + num2) << "\n"
-         << "(" << num1 << ") - (" << num2 << ") --> " << (num1 - num2) << "\n"
-         << "(" << num1 << ") * (" << num2 << ") --> " << (num1 * num2) << "\n"
-         << "(" << num1 << ") / (" << num2 << ") --> " << (num1 / num2) << "\n"
-         << "(" << num1 << ") % (" << num2 << ") --> " << (num1 % num2) << endl;
-}
-
-void printHeader() {
+    // Print the header
     cout << "We write code to manipulate data (which are\n"
     "provided by the user) to produce the\n"
     "required outcome in the most efficient way!\n\n"
@@ -43,35 +29,71 @@ void printHeader() {
     "  Implemented by:           Rabah Babaci\n"
     "  Required Submission Date: 2024/02/10\n"
     "  Actual Submission Date:   2024/02/09\n";
-}
-
-void processIntegers() {
-    int num1;
-    int num2;
 
     // Input for the first integer
     cout << "\nEnter an integer #1: ";
-    cin >> num1;
-    cout << "\n  " << num1 << " is " << checkSign(num1) << " and " << checkParity(num1) << "!" << endl;
+    cin >> num1RB;
+    cout << "\n  " << num1RB << " is " 
+         << (num1RB > 0 ? "positive" : num1RB < 0 ? "negative" : "zero") << " and " 
+         << (num1RB % 2 ? "odd" : "even") << "!" << endl;
 
     // Input for the second integer
     cout << "\nEnter an integer #2: ";
-    cin >> num2;
-    cout << "\n  " << num2 << " is " << checkSign(num2) << " and " << checkParity(num2) << "!\n" << endl;
+    cin >> num2RB;
+    cout << "\n  " << num2RB << " is " 
+         << (num2RB > 0 ? "positive" : num2RB < 0 ? "negative" : "zero") << " and " 
+         << (num2RB % 2 ? "odd" : "even") << "!\n" << endl;
 
     // Performing and displaying arithmetic operations
-    performArithmeticAndDisplay(num1, num2);
-}
+    cout << "(" << num1RB << ") + (" << num2RB << ") --> " << (num1RB + num2RB) << "\n"
+         << "(" << num1RB << ") - (" << num2RB << ") --> " << (num1RB - num2RB) << "\n"
+         << "(" << num1RB << ") * (" << num2RB << ") --> " << (num1RB * num2RB) << "\n"
+         << "(" << num1RB << ") / (" << num2RB << ") --> " << (num1RB / num2RB) << "\n"
+         << "(" << num1RB << ") % (" << num2RB << ") --> " << (num1RB % num2RB) << endl;
+    /*************************************************************************************/
 
-// Application Driver
-int main() {
-    // This function will print the header
-    printHeader();
+    // Input for the first integer
+    cout << "\nEnter an integer #1: ";
+    cin >> num1RB;
+    cout << "\n  " << num1RB << " is " 
+         << (num1RB > 0 ? "positive" : num1RB < 0 ? "negative" : "zero") << " and " 
+         << (num1RB % 2 ? "odd" : "even") << "!" << endl;
 
-    // This function will process integers
-    processIntegers();
-    processIntegers();
-    processIntegers();
+    // Input for the second integer
+    cout << "\nEnter an integer #2: ";
+    cin >> num2RB;
+    cout << "\n  " << num2RB << " is " 
+         << (num2RB > 0 ? "positive" : num2RB < 0 ? "negative" : "zero") << " and " 
+         << (num2RB % 2 ? "odd" : "even") << "!\n" << endl;
+
+    // Performing and displaying arithmetic operations
+    cout << "(" << num1RB << ") + (" << num2RB << ") --> " << (num1RB + num2RB) << "\n"
+         << "(" << num1RB << ") - (" << num2RB << ") --> " << (num1RB - num2RB) << "\n"
+         << "(" << num1RB << ") * (" << num2RB << ") --> " << (num1RB * num2RB) << "\n"
+         << "(" << num1RB << ") / (" << num2RB << ") --> " << (num1RB / num2RB) << "\n"
+         << "(" << num1RB << ") % (" << num2RB << ") --> " << (num1RB % num2RB) << endl;
+    /*************************************************************************************/
+
+    // Input for the first integer
+    cout << "\nEnter an integer #1: ";
+    cin >> num1RB;
+    cout << "\n  " << num1RB << " is " 
+         << (num1RB > 0 ? "positive" : num1RB < 0 ? "negative" : "zero") << " and " 
+         << (num1RB % 2 ? "odd" : "even") << "!" << endl;
+
+    // Input for the second integer
+    cout << "\nEnter an integer #2: ";
+    cin >> num2RB;
+    cout << "\n  " << num2RB << " is " 
+         << (num2RB > 0 ? "positive" : num2RB < 0 ? "negative" : "zero") << " and " 
+         << (num2RB % 2 ? "odd" : "even") << "!\n" << endl;
+
+    // Performing and displaying arithmetic operations
+    cout << "(" << num1RB << ") + (" << num2RB << ") --> " << (num1RB + num2RB) << "\n"
+         << "(" << num1RB << ") - (" << num2RB << ") --> " << (num1RB - num2RB) << "\n"
+         << "(" << num1RB << ") * (" << num2RB << ") --> " << (num1RB * num2RB) << "\n"
+         << "(" << num1RB << ") / (" << num2RB << ") --> " << (num1RB / num2RB) << "\n"
+         << "(" << num1RB << ") % (" << num2RB << ") --> " << (num1RB % num2RB) << endl;
 
     return 0;
 }
