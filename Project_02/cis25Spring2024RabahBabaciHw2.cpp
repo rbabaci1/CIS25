@@ -6,96 +6,94 @@
  */
 
 
-// Include/Header Files
+// Include/Header File(s)
 #include <iostream>
 using namespace std;
 
 // Application Driver
 int main() {
-    int num1RB;
-    int num2RB;
+     int num1RB;
+     int num2RB;
 
-    // Print the header
-    cout << "We write code to manipulate data (which are\n"
-    "provided by the user) to produce the\n"
-    "required outcome in the most efficient way!\n\n"
+     // Print the header
+     cout << "We write code to manipulate data (which are\n"
+     "provided by the user) to produce the\n"
+     "required outcome in the most efficient way!\n\n"
 
-    "CIS 25 - C++ Programming\n"
-    "Laney College\n"
-    "Rabah Babaci\n\n"
+     "CIS 25 - C++ Programming\n"
+     "Laney College\n"
+     "Rabah Babaci\n\n"
 
-    "Information --\n"
-    "  Assignment:               HW #2\n"
-    "  Implemented by:           Rabah Babaci\n"
-    "  Required Submission Date: 2024/02/10\n"
-    "  Actual Submission Date:   2024/02/09\n";
+     "Information --\n"
+     "  Assignment:               HW #2\n"
+     "  Implemented by:           Rabah Babaci\n"
+     "  Required Submission Date: 2024/02/25\n"
+     "  Actual Submission Date:   2024/02/24\n";
 
-    // Input for the first integer
-    cout << "\nEnter an integer #1: ";
-    cin >> num1RB;
-    cout << "\n  " << num1RB << " is " 
-         << (num1RB > 0 ? "positive" : num1RB < 0 ? "negative" : "zero") << " and " 
-         << (num1RB % 2 ? "odd" : "even") << "!" << endl;
+     // Input for the first integer
+     cout << "\nEnter an integer #1: ";
+     cin >> num1RB;
+     cout << "\n  " << num1RB << " is " 
+          << (num1RB > 0 ? "positive" : num1RB < 0 ? "negative" : "zero") << " and " 
+          << (num1RB % 2 ? "odd" : "even") << "!" << endl;
 
-    // Input for the second integer
-    cout << "\nEnter an integer #2: ";
-    cin >> num2RB;
-    cout << "\n  " << num2RB << " is " 
-         << (num2RB > 0 ? "positive" : num2RB < 0 ? "negative" : "zero") << " and " 
-         << (num2RB % 2 ? "odd" : "even") << "!\n" << endl;
+     // Input for the second integer
+     cout << "\nEnter an integer #2: ";
+     cin >> num2RB;
+     cout << "\n  " << num2RB << " is " 
+          << (num2RB > 0 ? "positive" : num2RB < 0 ? "negative" : "zero") << " and " 
+          << (num2RB % 2 ? "odd" : "even") << "!\n" << endl;
 
-    // Performing and displaying arithmetic operations
-    cout << "(" << num1RB << ") + (" << num2RB << ") --> " << (num1RB + num2RB) << "\n"
-         << "(" << num1RB << ") - (" << num2RB << ") --> " << (num1RB - num2RB) << "\n"
-         << "(" << num1RB << ") * (" << num2RB << ") --> " << (num1RB * num2RB) << "\n"
-         << "(" << num1RB << ") / (" << num2RB << ") --> " << (num1RB / num2RB) << "\n"
-         << "(" << num1RB << ") % (" << num2RB << ") --> " << (num1RB % num2RB) << endl;
-    /*************************************************************************************/
+     // Performing and displaying arithmetic operations
+     cout << "(" << num1RB << ") + (" << num2RB << ") --> " << (num1RB + num2RB) << "\n"
+          << "(" << num1RB << ") - (" << num2RB << ") --> " << (num1RB - num2RB) << "\n"
+          << "(" << num1RB << ") * (" << num2RB << ") --> " << (num1RB * num2RB) << "\n"
+          << "(" << num1RB << ") / (" << num2RB << ") --> " << (num1RB / num2RB) << "\n"
+          << "(" << num1RB << ") % (" << num2RB << ") --> " << (num1RB % num2RB) << endl;
 
-    // Input for the first integer
-    cout << "\nEnter an integer #1: ";
-    cin >> num1RB;
-    cout << "\n  " << num1RB << " is " 
-         << (num1RB > 0 ? "positive" : num1RB < 0 ? "negative" : "zero") << " and " 
-         << (num1RB % 2 ? "odd" : "even") << "!" << endl;
+     // Input for the first integer
+     cout << "\nEnter an integer #1: ";
+     cin >> num1RB;
+     cout << "\n  " << num1RB << " is " 
+          << (num1RB > 0 ? "positive" : num1RB < 0 ? "negative" : "zero") << " and " 
+          << (num1RB % 2 ? "odd" : "even") << "!" << endl;
 
-    // Input for the second integer
-    cout << "\nEnter an integer #2: ";
-    cin >> num2RB;
-    cout << "\n  " << num2RB << " is " 
-         << (num2RB > 0 ? "positive" : num2RB < 0 ? "negative" : "zero") << " and " 
-         << (num2RB % 2 ? "odd" : "even") << "!\n" << endl;
+     // Input for the second integer
+     cout << "\nEnter an integer #2: ";
+     cin >> num2RB;
+     cout << "\n  " << num2RB << " is " 
+          << (num2RB > 0 ? "positive" : num2RB < 0 ? "negative" : "zero") << " and " 
+          << (num2RB % 2 ? "odd" : "even") << "!\n" << endl;
 
-    // Performing and displaying arithmetic operations
-    cout << "(" << num1RB << ") + (" << num2RB << ") --> " << (num1RB + num2RB) << "\n"
-         << "(" << num1RB << ") - (" << num2RB << ") --> " << (num1RB - num2RB) << "\n"
-         << "(" << num1RB << ") * (" << num2RB << ") --> " << (num1RB * num2RB) << "\n"
-         << "(" << num1RB << ") / (" << num2RB << ") --> " << (num1RB / num2RB) << "\n"
-         << "(" << num1RB << ") % (" << num2RB << ") --> " << (num1RB % num2RB) << endl;
-    /*************************************************************************************/
+     // Performing and displaying arithmetic operations
+     cout << "(" << num1RB << ") + (" << num2RB << ") --> " << (num1RB + num2RB) << "\n"
+          << "(" << num1RB << ") - (" << num2RB << ") --> " << (num1RB - num2RB) << "\n"
+          << "(" << num1RB << ") * (" << num2RB << ") --> " << (num1RB * num2RB) << "\n"
+          << "(" << num1RB << ") / (" << num2RB << ") --> " << (num1RB / num2RB) << "\n"
+          << "(" << num1RB << ") % (" << num2RB << ") --> " << (num1RB % num2RB) << endl;
 
-    // Input for the first integer
-    cout << "\nEnter an integer #1: ";
-    cin >> num1RB;
-    cout << "\n  " << num1RB << " is " 
-         << (num1RB > 0 ? "positive" : num1RB < 0 ? "negative" : "zero") << " and " 
-         << (num1RB % 2 ? "odd" : "even") << "!" << endl;
+     // Input for the first integer
+     cout << "\nEnter an integer #1: ";
+     cin >> num1RB;
+     cout << "\n  " << num1RB << " is " 
+          << (num1RB > 0 ? "positive" : num1RB < 0 ? "negative" : "zero") << " and " 
+          << (num1RB % 2 ? "odd" : "even") << "!" << endl;
 
-    // Input for the second integer
-    cout << "\nEnter an integer #2: ";
-    cin >> num2RB;
-    cout << "\n  " << num2RB << " is " 
-         << (num2RB > 0 ? "positive" : num2RB < 0 ? "negative" : "zero") << " and " 
-         << (num2RB % 2 ? "odd" : "even") << "!\n" << endl;
+     // Input for the second integer
+     cout << "\nEnter an integer #2: ";
+     cin >> num2RB;
+     cout << "\n  " << num2RB << " is " 
+          << (num2RB > 0 ? "positive" : num2RB < 0 ? "negative" : "zero") << " and " 
+          << (num2RB % 2 ? "odd" : "even") << "!\n" << endl;
 
-    // Performing and displaying arithmetic operations
-    cout << "(" << num1RB << ") + (" << num2RB << ") --> " << (num1RB + num2RB) << "\n"
-         << "(" << num1RB << ") - (" << num2RB << ") --> " << (num1RB - num2RB) << "\n"
-         << "(" << num1RB << ") * (" << num2RB << ") --> " << (num1RB * num2RB) << "\n"
-         << "(" << num1RB << ") / (" << num2RB << ") --> " << (num1RB / num2RB) << "\n"
-         << "(" << num1RB << ") % (" << num2RB << ") --> " << (num1RB % num2RB) << endl;
+     // Performing and displaying arithmetic operations
+     cout << "(" << num1RB << ") + (" << num2RB << ") --> " << (num1RB + num2RB) << "\n"
+          << "(" << num1RB << ") - (" << num2RB << ") --> " << (num1RB - num2RB) << "\n"
+          << "(" << num1RB << ") * (" << num2RB << ") --> " << (num1RB * num2RB) << "\n"
+          << "(" << num1RB << ") / (" << num2RB << ") --> " << (num1RB / num2RB) << "\n"
+          << "(" << num1RB << ") % (" << num2RB << ") --> " << (num1RB % num2RB) << endl;
 
-    return 0;
+     return 0;
 }
 
 
@@ -115,7 +113,7 @@ Information --
   Actual Submission Date:   2024/02/24
 
 Enter an integer #1: 24
-    
+
   24 is positive and even!
 
 Enter an integer #2: 7
