@@ -10,16 +10,33 @@
 using namespace std;
 
 // Function Prototypes
-void runMenuHw3(void);
-void displayDigitInfo(int arg);
+void displayCodingStatementRB(void);
+void displayClassInfoRB(void);
+void runMenuHw3RB(void);
+void displayDigitInfoRB(int arg);
 
 // Application Driver
 int main() {
 
+  displayCodingStatementRB();
+
+  displayClassInfoRB();
+  
+  runMenuHw3RB();
+
+  return 0;
+}
+
+// Function Definitions
+
+void displayCodingStatementRB() {
   cout << "We write code to manipulate data (which are\n"
     "provided by the user) to produce the\n"
-    "required outcome in the most efficient way!\n\n"
-    "CIS 25 - C++ Programming\n"
+    "required outcome in the most efficient way!\n\n" << endl;
+}
+
+void displayClassInfoRB() {
+  cout << "CIS 25 - C++ Programming\n"
     "Laney College\n"
     "Rabah Babaci\n\n"
     "Information --\n"
@@ -27,21 +44,16 @@ int main() {
     "  Implemented by:           Rabah Babaci\n"
     "  Required Submission Date: 2024/03/17\n"
     "  Actual Submission Date:   2024/02/15\n" << endl;
-  
-  runMenuHw3();
-
-  return 0;
 }
 
-
-void runMenuHw3() {
+void runMenuHw3RB() {
     int optionRB;
     int userInputRB;
 
     do {
         cout << "************************************\n"
             "*           MENU – HW #3           *\n"
-            "* (1) Calling displayDigitInfoFL() *\n"
+            "* (1) Calling displayDigitInfoRB() *\n"
             "* (2) Quit                         *\n"
             "************************************\n"
             "Enter an integer for option + ENTER: ";
@@ -49,12 +61,13 @@ void runMenuHw3() {
 
         switch (optionRB) {
         case 1:
-            cout << "\nCalling displayDigitInfo() ..." << endl;
-
             cout << "\nEnter an int: ";
             cin >> userInputRB;
 
-            // displayDigitInfo(userInputRB);
+            cout << "\nCalling displayDigitInfoRB() with an argument of\n  "
+                << userInputRB << endl;
+
+            displayDigitInfoRB(userInputRB);
 
             break;
         case 2:
@@ -66,6 +79,13 @@ void runMenuHw3() {
         }
     } while (optionRB != 2);
 }
+
+void displayDigitInfoRB(int arg) {
+  cout << "\n  While displayDigitInfoRB() is running –\n\n";
+
+  // call a function
+}
+
 
 /** PROGRAM_OUTPUT
 We write code to manipulate data (which are
@@ -84,7 +104,7 @@ Information --
 
 ************************************
 *           MENU – HW #3           *
-* (1) Calling displayDigitInfoFL() *
+* (1) Calling displayDigitInfoRB() *
 * (2) Quit                         *
 ************************************
 Enter an integer for option + ENTER: 6
@@ -93,7 +113,7 @@ Wrong Option!
 
 ************************************
 *           MENU – HW #3           *
-* (1) Calling displayDigitInfoFL() *
+* (1) Calling displayDigitInfoRB() *
 * (2) Quit                         *
 ************************************
 Enter an integer for option + ENTER: -1
@@ -102,17 +122,17 @@ Wrong Option!
 
 ************************************
 *           MENU – HW #3           *
-* (1) Calling displayDigitInfoFL() *
+* (1) Calling displayDigitInfoRB() *
 * (2) Quit                         *
 ************************************
 Enter an integer for option + ENTER: 1
 
 Enter an integer: -29
 
-Calling displayDigitInfoFL() with an argument of
+Calling displayDigitInfoRB() with an argument of
   -29
 
-  While displayDigitInfoFL() is running –
+  While displayDigitInfoRB() is running –
 
   -29 is negative and odd!
   -29 has 2 digit(s).
@@ -131,17 +151,17 @@ Calling displayDigitInfoFL() with an argument of
 
 ************************************
 *           MENU – HW #3           *
-* (1) Calling displayDigitInfoFL() *
+* (1) Calling displayDigitInfoRB() *
 * (2) Quit                         *
 ************************************
 Enter an integer for option + ENTER: 1
 
 Enter an integer: -294257
 
-Calling displayDigitInfoFL() with an argument of
+Calling displayDigitInfoRB() with an argument of
   -294257
 
-  While displayDigitInfoFL() is running –
+  While displayDigitInfoRB() is running –
 
   -294257 is negative and odd!
   -294257 has 6 digit(s).
@@ -163,17 +183,17 @@ Calling displayDigitInfoFL() with an argument of
 
 ************************************
 *           MENU – HW #3           *
-* (1) Calling displayDigitInfoFL() *
+* (1) Calling displayDigitInfoRB() *
 * (2) Quit                         *
 ************************************
 Enter an integer for option + ENTER: 1
 
 Enter an integer: 882944428
 
-Calling displayDigitInfoFL() with an argument of
+Calling displayDigitInfoRB() with an argument of
   882944428
 
-  While displayDigitInfoFL() is running –
+  While displayDigitInfoRB() is running –
 
   882944428 is positive and even!
   882944428 has 9 digit(s).
@@ -194,23 +214,23 @@ Calling displayDigitInfoFL() with an argument of
 
 ************************************
 *           MENU – HW #3           *
-* (1) Calling displayDigitInfoFL() *
+* (1) Calling displayDigitInfoRB() *
 * (2) Quit                         *
 ************************************
 Enter an integer for option + ENTER: 1
 
 Enter an integer: 0
 
-Calling displayDigitInfoFL() with an argument of
+Calling displayDigitInfoRB() with an argument of
   0
 
-  While displayDigitInfoFL() is running –
+  While displayDigitInfoRB() is running –
 
   0 is  even!
 
 ************************************
 *           MENU – HW #3           *
-* (1) Calling displayDigitInfoFL() *
+* (1) Calling displayDigitInfoRB() *
 * (2) Quit                         *
 ************************************
 Enter an integer for option + ENTER: 2
