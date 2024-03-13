@@ -1,4 +1,2 @@
-
-  // cout << "8: " << digitEightCountRB << " times" << endl;
-  // cout << "2: " << digitTwoCountRB << " times" << endl;
-  // cout << "4: " << digitFourCountRB << " times" << endl;
+cout << "\n  Conditioned on largest occurrence, the smallest odd is\n"
+  //         "    " << smallestOddWithLargestOccurrenceRB << " seen " << smallestOddWithLargestOccurrenceCountRB << " time(s)\n\n";

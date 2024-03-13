@@ -13,8 +13,8 @@ using namespace std;
 void displayCodingStatementRB(void);
 void displayClassInfoRB(void);
 void runMenuHw3RB(void);
-void displayDigitInfoRB(int num);
-int countDigitsRB(int num);
+void displayDigitInfoRB(int userInput);
+int countDigitsRB(int userInput);
 void displayEvenDigitCounts(int zero, int two, int four, int six, int eight);
 void displayOddDigitCounts(int one, int three, int five, int seven, int nine);
 
@@ -22,7 +22,9 @@ void displayOddDigitCounts(int one, int three, int five, int seven, int nine);
 int main() {
 
   displayCodingStatementRB();
+
   displayClassInfoRB();
+
   runMenuHw3RB();
 
   return 0;
@@ -46,60 +48,61 @@ void displayClassInfoRB() {
     "  Actual Submission Date:   2024/02/15\n" << endl;
 }
 
-int countDigitsRB(int num) {
-  // Counting the number of digits
+int countDigitsRB(int userInput) {
   int digitCountRB{ 0 };
 
   do {
     digitCountRB++;
-    num /= 10;
-  } while (num);
+    userInput /= 10;
+  } while (userInput);
 
   return digitCountRB;
 }
 
-int countEvenDigitsRB(int num) {
+int countEvenDigitsRB(int userInput) {
   int evenDigitCountRB{ 0 };
 
   do {
-    if (num % 2 == 0) {
+    // !!! ask if can use (!(userInput % 2))
+    if (userInput % 2 == 0) {
       evenDigitCountRB++;
     }
 
-    num /= 10;
-  } while (num);
+    userInput /= 10;
+  } while (userInput);
 
   return evenDigitCountRB;
 }
 
-int countOddDigitsRB(int num) {
+int countOddDigitsRB(int userInput) {
   int oddDigitCountRB{ 0 };
 
   do {
-    if (num % 2 != 0) {
+    // !!! ask if can use (userInput % 2)
+    if (userInput % 2 != 0) {
       oddDigitCountRB++;
     }
 
-    num /= 10;
-  } while (num);
+    userInput /= 10;
+  } while (userInput);
 
   return oddDigitCountRB;
 }
 
 void displayEvenDigitCounts(int zero, int two, int four, int six, int eight) {
-  if (zero) cout << "    0 seen " << zero << " time(s)\n";
-  if (two) cout << "    2 seen " << two << " time(s)\n";
-  if (four) cout << "    4 seen " << four << " time(s)\n";
-  if (six) cout << "    6 seen " << six << " time(s)\n";
-  if (eight) cout << "    8 seen " << eight << " time(s)\n";
+  if (zero) cout << "    0 seen " << zero << " time(s)" << endl;
+  if (two) cout << "    2 seen " << two << " time(s)" << endl;
+  if (four) cout << "    4 seen " << four << " time(s)" << endl;
+  if (six) cout << "    6 seen " << six << " time(s)" << endl;
+  if (eight) cout << "    8 seen " << eight << " time(s)" << endl;
 }
 
 void displayOddDigitCounts(int one, int three, int five, int seven, int nine) {
-  if (one) cout << "    1 seen " << one << " time(s)\n";
-  if (three) cout << "    3 seen " << three << " time(s)\n";
-  if (five) cout << "    5 seen " << five << " time(s)\n";
-  if (seven) cout << "    7 seen " << seven << " time(s)\n";
-  if (nine) cout << "    9 seen " << nine << " time(s)\n";
+  if (one) cout << "    1 seen " << one << " time(s)" << endl;
+  if (three) cout << "    3 seen " << three << " time(s)" << endl;
+  if (five) cout << "    5 seen " << five << " time(s)" << endl;
+  if (seven) cout << "    7 seen " << seven << " time(s)" << endl;
+  if (nine) cout << "    9 seen " << nine << " time(s)" << endl;
 }
 
 void runMenuHw3RB() {
@@ -136,11 +139,11 @@ void runMenuHw3RB() {
     } while (optionRB != 2);
 }
 
-void displayDigitInfoRB(int num) {
-  int numCopyRB = num < 0 ? -num : num;
-  int totalDigitsRB = countDigitsRB(num);
-  int evenDigitCountRB = countEvenDigitsRB(num);
-  int oddDigitCountRB = countOddDigitsRB(num);
+void displayDigitInfoRB(int userInput) {
+  int userInputCopyRB = userInput < 0 ? -userInput : userInput;
+  int totalDigitsRB = countDigitsRB(userInput);
+  int evenDigitCountRB = countEvenDigitsRB(userInput);
+  int oddDigitCountRB = countOddDigitsRB(userInput);
 
   int digitZeroCountRB{ 0 };
   int digitTwoCountRB{ 0 };
@@ -161,24 +164,24 @@ void displayDigitInfoRB(int num) {
 
   cout << "\n  While displayDigitInfoRB() is running –\n\n";
 
-  // Check if number is positive, negative, or zero and if it is even or odd
-  if (num > 0 && num % 2 == 0) {
-    cout << "  " << num << " is positive and even!\n";
-  } else if (num > 0 && num % 2 != 0) {
-    cout << "  " << num << " is positive and odd!\n";
-  } else if (num < 0 && num % 2 == 0) {
-    cout << "  " << num << " is negative and even!\n";
-  } else if (num < 0 && num % 2 != 0) {
-    cout << "  " << num << " is negative and odd!\n";
+  // Check if userInputber is positive, negative, or zero and if it is even or odd
+  if (userInput > 0 && userInput % 2 == 0) {
+    cout << "  " << userInput << " is positive and even!\n";
+  } else if (userInput > 0 && userInput % 2 != 0) {
+    cout << "  " << userInput << " is positive and odd!\n";
+  } else if (userInput < 0 && userInput % 2 == 0) {
+    cout << "  " << userInput << " is negative and even!\n";
+  } else if (userInput < 0 && userInput % 2 != 0) {
+    cout << "  " << userInput << " is negative and odd!\n";
   } else {
-    cout << "  " << num << " is even!\n\n";
+    cout << "  " << userInput << " is even!\n\n";
     return;
   }
   
-  cout << "  " << num << " has " << totalDigitsRB << " digit(s).\n\n";
+  cout << "  " << userInput << " has " << totalDigitsRB << " digit(s).\n\n";
 
   do {
-    int lastDigitRB = numCopyRB  % 10;
+    int lastDigitRB = userInputCopyRB  % 10;
 
     switch (lastDigitRB) {
       case 0: digitZeroCountRB++; break;
@@ -193,8 +196,8 @@ void displayDigitInfoRB(int num) {
       case 9: digitNineCountRB++; break;
     }
 
-    numCopyRB  /= 10;
-  } while (numCopyRB);
+    userInputCopyRB  /= 10;
+  } while (userInputCopyRB);
 
   // Find the smallest even and odd digits with the largest occurrence
   if (digitZeroCountRB > smallestEvenWithLargestOccurrenceCountRB) {
