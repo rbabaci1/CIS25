@@ -1,8 +1,8 @@
 /**
- * Program Name: cis25Spring2024RabahBabaciHw2.cpp
+ * Program Name: cis25Spring2024RabahBabaciHw3.cpp
  * Discussion:   HW #3
  * Written By:   R. Babaci
- * Date:         2024/03/15
+ * Date:         2024/04/04
  */
 
 // Include/Header File(s)
@@ -12,11 +12,12 @@ using namespace std;
 // Function Prototypes
 void displayCodingStatementRB(void);
 void displayClassInfoRB(void);
-void runMenuHw3RB(void);
-void displayDigitInfoRB(int userInput);
+void displayNumberClassifications(int userInput);
 int countDigitsRB(int userInput);
 void displayEvenDigitCounts(int zero, int two, int four, int six, int eight);
 void displayOddDigitCounts(int one, int three, int five, int seven, int nine);
+void displayDigitInfoRB(int userInput);
+void runMenuHw3RB(void);
 
 // Application Driver
 int main() {
@@ -44,9 +45,25 @@ void displayClassInfoRB() {
     "Information --\n"
     "  Assignment:               HW #3\n"
     "  Implemented by:           Rabah Babaci\n"
-    "  Required Submission Date: 2024/03/17\n"
-    "  Actual Submission Date:   2024/02/15\n" << endl;
+    "  Required Submission Date: 2024/04/07\n"
+    "  Actual Submission Date:   2024/04/04\n" << endl;
 }
+
+void displayNumberClassifications(int userInput) {
+  if (userInput > 0 && !(userInput % 2)) {
+    cout << "  " << userInput << " is positive and even!\n";
+  } else if (userInput > 0 && userInput % 2) {
+    cout << "  " << userInput << " is positive and odd!\n";
+  } else if (userInput < 0 && !(userInput % 2)) {
+    cout << "  " << userInput << " is negative and even!\n";
+  } else if (userInput < 0 && userInput % 2) {
+    cout << "  " << userInput << " is negative and odd!\n";
+  } else {
+    cout << "  " << userInput << " is even!\n\n";
+    return;
+  }
+}
+
 
 int countDigitsRB(int userInput) {
   int digitCountRB{ 0 };
@@ -57,36 +74,6 @@ int countDigitsRB(int userInput) {
   } while (userInput);
 
   return digitCountRB;
-}
-
-int countEvenDigitsRB(int userInput) {
-  int evenDigitCountRB{ 0 };
-
-  do {
-    // !!! ask if can use (!(userInput % 2))
-    if (userInput % 2 == 0) {
-      evenDigitCountRB++;
-    }
-
-    userInput /= 10;
-  } while (userInput);
-
-  return evenDigitCountRB;
-}
-
-int countOddDigitsRB(int userInput) {
-  int oddDigitCountRB{ 0 };
-
-  do {
-    // !!! ask if can use (userInput % 2)
-    if (userInput % 2 != 0) {
-      oddDigitCountRB++;
-    }
-
-    userInput /= 10;
-  } while (userInput);
-
-  return oddDigitCountRB;
 }
 
 void displayEvenDigitCounts(int zero, int two, int four, int six, int eight) {
@@ -120,7 +107,7 @@ void runMenuHw3RB() {
 
         switch (optionRB) {
         case 1:
-            cout << "\nEnter an int: ";
+            cout << "\nEnter an integer: ";
             cin >> userInputRB;
 
             cout << "\nCalling displayDigitInfoRB() with an argument of\n  "
@@ -140,10 +127,10 @@ void runMenuHw3RB() {
 }
 
 void displayDigitInfoRB(int userInput) {
-  int userInputCopyRB = userInput < 0 ? -userInput : userInput;
-  int totalDigitsRB = countDigitsRB(userInput);
-  int evenDigitCountRB = countEvenDigitsRB(userInput);
-  int oddDigitCountRB = countOddDigitsRB(userInput);
+  int userInputCopyRB{ (userInput < 0) ? -userInput : userInput };
+  int totalDigitsCount = countDigitsRB(userInput);
+  int uniqueEvenDigitCountRB{ 0 };
+  int uniqueOddDigitCountRB{ 0 };
 
   int digitZeroCountRB{ 0 };
   int digitTwoCountRB{ 0 };
@@ -163,27 +150,11 @@ void displayDigitInfoRB(int userInput) {
   int smallestOddWithLargestOccurrenceCountRB{ 0 };
 
   cout << "\n  While displayDigitInfoRB() is running –\n\n";
-
-  // Check if userInputber is positive, negative, or zero and if it is even or odd
-  if (userInput > 0 && userInput % 2 == 0) {
-    cout << "  " << userInput << " is positive and even!\n";
-  } else if (userInput > 0 && userInput % 2 != 0) {
-    cout << "  " << userInput << " is positive and odd!\n";
-  } else if (userInput < 0 && userInput % 2 == 0) {
-    cout << "  " << userInput << " is negative and even!\n";
-  } else if (userInput < 0 && userInput % 2 != 0) {
-    cout << "  " << userInput << " is negative and odd!\n";
-  } else {
-    cout << "  " << userInput << " is even!\n\n";
-    return;
-  }
-  
-  cout << "  " << userInput << " has " << totalDigitsRB << " digit(s).\n\n";
+  displayNumberClassifications(userInput);
+  cout << "  " << userInput << " has " << totalDigitsCount << " digit(s).\n\n";
 
   do {
-    int lastDigitRB = userInputCopyRB  % 10;
-
-    switch (lastDigitRB) {
+    switch (userInputCopyRB  % 10) {
       case 0: digitZeroCountRB++; break;
       case 1: digitOneCountRB++; break;
       case 2: digitTwoCountRB++; break;
@@ -198,6 +169,18 @@ void displayDigitInfoRB(int userInput) {
 
     userInputCopyRB  /= 10;
   } while (userInputCopyRB);
+
+  // Count the number of unique even and odd digits
+  if (digitZeroCountRB) uniqueEvenDigitCountRB++;
+  if (digitOneCountRB) uniqueOddDigitCountRB++;
+  if (digitTwoCountRB) uniqueEvenDigitCountRB++;
+  if (digitThreeCountRB) uniqueOddDigitCountRB++;
+  if (digitFourCountRB) uniqueEvenDigitCountRB++;
+  if (digitFiveCountRB) uniqueOddDigitCountRB++;
+  if (digitSixCountRB) uniqueEvenDigitCountRB++;
+  if (digitSevenCountRB) uniqueOddDigitCountRB++;
+  if (digitEightCountRB) uniqueEvenDigitCountRB++;
+  if (digitNineCountRB) uniqueOddDigitCountRB++;
 
   // Find the smallest even and odd digits with the largest occurrence
   if (digitZeroCountRB > smallestEvenWithLargestOccurrenceCountRB) {
@@ -241,17 +224,19 @@ void displayDigitInfoRB(int userInput) {
     smallestOddWithLargestOccurrenceCountRB = digitNineCountRB;
   }
 
-  cout << "  There is/are " << evenDigitCountRB << " even digit(s) of\n";
+  cout << "  There is/are " << uniqueEvenDigitCountRB << " unique even digit(s) of\n";
   displayEvenDigitCounts(digitZeroCountRB, digitTwoCountRB, digitFourCountRB, digitSixCountRB, digitEightCountRB);
 
-  cout << "\n  Conditioned on largest occurrence, the smallest even is\n"
-          "    " << smallestEvenWithLargestOccurrenceRB << " seen " << smallestEvenWithLargestOccurrenceCountRB << " time(s)\n\n";
+  cout << "\n  Conditioned on largest occurrence -\n"
+          "    The smallest unique even digit is\n\n"
+          "      " << smallestEvenWithLargestOccurrenceRB << " seen " << smallestEvenWithLargestOccurrenceCountRB << " time(s)\n\n";
 
-  cout << "  There is/are " << oddDigitCountRB << " odd digit(s) of\n";
+  cout << "  There is/are " << uniqueOddDigitCountRB << " unique odd digit(s) of\n";
   displayOddDigitCounts(digitOneCountRB, digitThreeCountRB, digitFiveCountRB, digitSevenCountRB, digitNineCountRB);
   
-  cout << "\n  Conditioned on largest occurrence, the smallest odd is\n"
-          "    " << smallestOddWithLargestOccurrenceRB << " seen " << smallestOddWithLargestOccurrenceCountRB << " time(s)\n\n";
+  cout << "\n  Conditioned on largest occurrence -\n"
+          "    The smallest unique odd digit is\n\n"
+          "      " << smallestOddWithLargestOccurrenceRB << " seen " << smallestOddWithLargestOccurrenceCountRB << " time(s)\n\n";
 }
 
 
