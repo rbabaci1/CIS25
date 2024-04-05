@@ -12,7 +12,6 @@ using namespace std;
 // Function Prototypes
 void displayCodingStatementRB(void);
 void displayClassInfoRB(void);
-void displayNumberClassifications(int userInput);
 int countDigitsRB(int userInput);
 void displayEvenDigitCounts(int zero, int two, int four, int six, int eight);
 void displayOddDigitCounts(int one, int three, int five, int seven, int nine);
@@ -48,22 +47,6 @@ void displayClassInfoRB() {
     "  Required Submission Date: 2024/04/07\n"
     "  Actual Submission Date:   2024/04/04\n" << endl;
 }
-
-void displayNumberClassifications(int userInput) {
-  if (userInput > 0 && !(userInput % 2)) {
-    cout << "  " << userInput << " is positive and even!\n";
-  } else if (userInput > 0 && userInput % 2) {
-    cout << "  " << userInput << " is positive and odd!\n";
-  } else if (userInput < 0 && !(userInput % 2)) {
-    cout << "  " << userInput << " is negative and even!\n";
-  } else if (userInput < 0 && userInput % 2) {
-    cout << "  " << userInput << " is negative and odd!\n";
-  } else {
-    cout << "  " << userInput << " is even!\n\n";
-    return;
-  }
-}
-
 
 int countDigitsRB(int userInput) {
   int digitCountRB{ 0 };
@@ -144,13 +127,27 @@ void displayDigitInfoRB(int userInput) {
   int digitSevenCountRB{ 0 };
   int digitNineCountRB{ 0 };
 
-  int smallestEvenWithLargestOccurrenceRB{ -1 };
-  int smallestOddWithLargestOccurrenceRB{ -1 };
+  int smallestEvenWithLargestOccurrenceRB;
+  int smallestOddWithLargestOccurrenceRB;
   int smallestEvenWithLargestOccurrenceCountRB{ 0 };
   int smallestOddWithLargestOccurrenceCountRB{ 0 };
 
   cout << "\n  While displayDigitInfoRB() is running –\n\n";
-  displayNumberClassifications(userInput);
+
+  // Check if the number is positive, negative, even, or odd
+  if (userInput > 0 && !(userInput % 2)) {
+    cout << "  " << userInput << " is positive and even!\n";
+  } else if (userInput > 0 && userInput % 2) {
+    cout << "  " << userInput << " is positive and odd!\n";
+  } else if (userInput < 0 && !(userInput % 2)) {
+    cout << "  " << userInput << " is negative and even!\n";
+  } else if (userInput < 0 && userInput % 2) {
+    cout << "  " << userInput << " is negative and odd!\n";
+  } else {
+    cout << "  " << userInput << " is even!\n\n";
+    return;
+  }
+
   cout << "  " << userInput << " has " << totalDigitsCount << " digit(s).\n\n";
 
   do {
@@ -252,8 +249,8 @@ Rabah Babaci
 Information --
   Assignment:               HW #3
   Implemented by:           Rabah Babaci
-  Required Submission Date: 2024/03/17
-  Actual Submission Date:   2024/02/15
+  Required Submission Date: 2024/04/07
+  Actual Submission Date:   2024/04/04
 
 ************************************
 *           MENU – HW #3           *
@@ -290,17 +287,21 @@ Calling displayDigitInfoRB() with an argument of
   -29 is negative and odd!
   -29 has 2 digit(s).
 
-  There is/are 1 even digit(s) of
+  There is/are 1 unique even digit(s) of
     2 seen 1 time(s)
 
-  Conditioned on largest occurrence, the smallest even is
-    2 seen 1 time(s)
+  Conditioned on largest occurrence -
+    The smallest unique even digit is
 
-  There is/are 1 odd digit(s) of
+      2 seen 1 time(s)  
+
+  There is/are 1 unique odd digit(s) of
     9 seen 1 time(s)
 
-  Conditioned on largest occurrence, the smallest odd is
-    9 seen 1 time(s)
+  Conditioned on largest occurrence -
+    The smallest unique odd digit is
+
+      9 seen 1 time(s)
 
 ************************************
 *           MENU – HW #3           *
@@ -319,20 +320,24 @@ Calling displayDigitInfoRB() with an argument of
   -294257 is negative and odd!
   -294257 has 6 digit(s).
 
-  There is/are 2 even digit(s) of
+  There is/are 2 unique even digit(s) of
     2 seen 2 time(s)
     4 seen 1 time(s)
 
-  Conditioned on largest occurrence, the smallest even is
-    2 seen 2 time(s)
+  Conditioned on largest occurrence -
+    The smallest unique even digit is
 
-  There is/are 3 odd digit(s) of
+      2 seen 2 time(s)
+
+  There is/are 3 unique odd digit(s) of
     5 seen 1 time(s)
     7 seen 1 time(s)
     9 seen 1 time(s)
 
-  Conditioned on largest occurrence, the smallest odd is
-    5 seen 1 time(s)
+  Conditioned on largest occurrence -
+    The smallest unique odd digit is
+
+      5 seen 1 time(s)
 
 ************************************
 *           MENU – HW #3           *
@@ -351,19 +356,23 @@ Calling displayDigitInfoRB() with an argument of
   882944428 is positive and even!
   882944428 has 9 digit(s).
 
-  There is/are 6 even digit(s) of
+  There is/are 3 unique even digit(s) of
     2 seen 2 time(s)
     4 seen 3 time(s)
     8 seen 3 time(s)
 
-  Conditioned on largest occurrence, the smallest even is
-    4 seen 3 time(s)
+  Conditioned on largest occurrence -
+    The smallest unique even digit is
 
-  There is/are 1 odd digit(s) of
+      4 seen 3 time(s)
+
+  There is/are 1 uniique odd digit(s) of
     9 seen 1 time(s)
 
-  Conditioned on largest occurrence, the smallest odd is
-    9 seen 1 time(s)
+  Conditioned on largest occurrence -
+    The smallest unique odd digit is
+
+      9 seen 1 time(s)
 
 ************************************
 *           MENU – HW #3           *
