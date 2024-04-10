@@ -12,11 +12,11 @@ using namespace std;
 // Function Prototypes
 void displayCodingStatementRB(void);
 void displayClassInfoRB(void);
-int countDigitsRB(int userInput);
-void displayEvenDigitCounts(int zero, int two, int four, int six, int eight);
-void displayOddDigitCounts(int one, int three, int five, int seven, int nine);
-void displayDigitInfoRB(int userInput);
 void runMenuHw3RB(void);
+int countDigitsRB(int userInput);
+void displayEvenDigitCountsRB(int zero, int two, int four, int six, int eight);
+void displayOddDigitCountsRB(int one, int three, int five, int seven, int nine);
+void displayDigitInfoRB(int userInput);
 
 // Application Driver
 int main() {
@@ -45,43 +45,16 @@ void displayClassInfoRB() {
     "  Assignment:               HW #3\n"
     "  Implemented by:           Rabah Babaci\n"
     "  Required Submission Date: 2024/04/07\n"
-    "  Actual Submission Date:   2024/04/04\n" << endl;
-}
-
-int countDigitsRB(int userInput) {
-  int digitCountRB{ 0 };
-
-  do {
-    digitCountRB++;
-    userInput /= 10;
-  } while (userInput);
-
-  return digitCountRB;
-}
-
-void displayEvenDigitCounts(int zero, int two, int four, int six, int eight) {
-  if (zero) cout << "    0 seen " << zero << " time(s)" << endl;
-  if (two) cout << "    2 seen " << two << " time(s)" << endl;
-  if (four) cout << "    4 seen " << four << " time(s)" << endl;
-  if (six) cout << "    6 seen " << six << " time(s)" << endl;
-  if (eight) cout << "    8 seen " << eight << " time(s)" << endl;
-}
-
-void displayOddDigitCounts(int one, int three, int five, int seven, int nine) {
-  if (one) cout << "    1 seen " << one << " time(s)" << endl;
-  if (three) cout << "    3 seen " << three << " time(s)" << endl;
-  if (five) cout << "    5 seen " << five << " time(s)" << endl;
-  if (seven) cout << "    7 seen " << seven << " time(s)" << endl;
-  if (nine) cout << "    9 seen " << nine << " time(s)" << endl;
+    "  Actual Submission Date:   2024/04/09\n" << endl;
 }
 
 void runMenuHw3RB() {
-    int optionRB;
     int userInputRB;
+    int optionRB;
 
     do {
         cout << "************************************\n"
-            "*           MENU – HW #3           *\n"
+            "*           MENU - HW #3           *\n"
             "* (1) Calling displayDigitInfoRB() *\n"
             "* (2) Quit                         *\n"
             "************************************\n"
@@ -109,9 +82,36 @@ void runMenuHw3RB() {
     } while (optionRB != 2);
 }
 
+int countDigitsRB(int userInput) {
+  int digitCountRB{ 0 };
+
+  do {
+    digitCountRB++;
+    userInput /= 10;
+  } while (userInput);
+
+  return digitCountRB;
+}
+
+void displayEvenDigitCountsRB(int zero, int two, int four, int six, int eight) {
+  if (zero) cout << "    0 seen " << zero << " time(s)" << endl;
+  if (two) cout << "    2 seen " << two << " time(s)" << endl;
+  if (four) cout << "    4 seen " << four << " time(s)" << endl;
+  if (six) cout << "    6 seen " << six << " time(s)" << endl;
+  if (eight) cout << "    8 seen " << eight << " time(s)" << endl;
+}
+
+void displayOddDigitCountsRB(int one, int three, int five, int seven, int nine) {
+  if (one) cout << "    1 seen " << one << " time(s)" << endl;
+  if (three) cout << "    3 seen " << three << " time(s)" << endl;
+  if (five) cout << "    5 seen " << five << " time(s)" << endl;
+  if (seven) cout << "    7 seen " << seven << " time(s)" << endl;
+  if (nine) cout << "    9 seen " << nine << " time(s)" << endl;
+}
+
 void displayDigitInfoRB(int userInput) {
   int userInputCopyRB{ (userInput < 0) ? -userInput : userInput };
-  int totalDigitsCount = countDigitsRB(userInput);
+  int totalDigitsCountRB{ countDigitsRB(userInput) };
   int uniqueEvenDigitCountRB{ 0 };
   int uniqueOddDigitCountRB{ 0 };
 
@@ -127,10 +127,10 @@ void displayDigitInfoRB(int userInput) {
   int digitSevenCountRB{ 0 };
   int digitNineCountRB{ 0 };
 
-  int smallestEvenWithLargestOccurrenceRB;
-  int smallestOddWithLargestOccurrenceRB;
   int smallestEvenWithLargestOccurrenceCountRB{ 0 };
   int smallestOddWithLargestOccurrenceCountRB{ 0 };
+  int smallestEvenWithLargestOccurrenceRB;
+  int smallestOddWithLargestOccurrenceRB;
 
   cout << "\n  While displayDigitInfoRB() is running –\n\n";
 
@@ -144,11 +144,11 @@ void displayDigitInfoRB(int userInput) {
   } else if (userInput < 0 && userInput % 2) {
     cout << "  " << userInput << " is negative and odd!\n";
   } else {
-    cout << "  " << userInput << " is even!\n\n";
+    cout << "  " << userInput << " is given!\n\n";
     return;
   }
 
-  cout << "  " << userInput << " has " << totalDigitsCount << " digit(s).\n\n";
+  cout << "  " << userInput << " has " << totalDigitsCountRB << " digit(s).\n\n";
 
   do {
     switch (userInputCopyRB  % 10) {
@@ -222,20 +222,19 @@ void displayDigitInfoRB(int userInput) {
   }
 
   cout << "  There is/are " << uniqueEvenDigitCountRB << " unique even digit(s) of\n";
-  displayEvenDigitCounts(digitZeroCountRB, digitTwoCountRB, digitFourCountRB, digitSixCountRB, digitEightCountRB);
+  displayEvenDigitCountsRB(digitZeroCountRB, digitTwoCountRB, digitFourCountRB, digitSixCountRB, digitEightCountRB);
 
   cout << "\n  Conditioned on largest occurrence -\n"
           "    The smallest unique even digit is\n\n"
           "      " << smallestEvenWithLargestOccurrenceRB << " seen " << smallestEvenWithLargestOccurrenceCountRB << " time(s)\n\n";
 
   cout << "  There is/are " << uniqueOddDigitCountRB << " unique odd digit(s) of\n";
-  displayOddDigitCounts(digitOneCountRB, digitThreeCountRB, digitFiveCountRB, digitSevenCountRB, digitNineCountRB);
-  
+  displayOddDigitCountsRB(digitOneCountRB, digitThreeCountRB, digitFiveCountRB, digitSevenCountRB, digitNineCountRB);
+
   cout << "\n  Conditioned on largest occurrence -\n"
           "    The smallest unique odd digit is\n\n"
           "      " << smallestOddWithLargestOccurrenceRB << " seen " << smallestOddWithLargestOccurrenceCountRB << " time(s)\n\n";
 }
-
 
 /** PROGRAM_OUTPUT
 We write code to manipulate data (which are
@@ -250,7 +249,7 @@ Information --
   Assignment:               HW #3
   Implemented by:           Rabah Babaci
   Required Submission Date: 2024/04/07
-  Actual Submission Date:   2024/04/04
+  Actual Submission Date:   2024/04/09
 
 ************************************
 *           MENU – HW #3           *
@@ -388,7 +387,7 @@ Calling displayDigitInfoRB() with an argument of
 
   While displayDigitInfoRB() is running –
 
-  0 is  even!
+  0 is  given!
 
 ************************************
 *           MENU – HW #3           *
